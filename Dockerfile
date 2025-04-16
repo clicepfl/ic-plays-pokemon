@@ -1,7 +1,7 @@
 FROM consol/rocky-xfce-vnc
 
 USER root
-RUN dnf -y install unzip SDL2.x86_64
+RUN dnf -y install unzip SDL2.x86_64 xdotool
 
 USER 1000
 
