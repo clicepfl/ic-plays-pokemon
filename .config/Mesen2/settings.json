@@ -8649,6 +8649,14 @@
     "Items": [
       {
         "RomFile": {
+          "Path": "/headless/PokemonRed.zip",
+          "InnerFile": "Pokemon - Red Version (USA, Europe) (SGB Enhanced).gb",
+          "InnerFileIndex": 0
+        },
+        "PatchFile": null
+      },
+      {
+        "RomFile": {
           "Path": "/home/user/PokemonRed.zip",
           "InnerFile": "Pokemon - Red Version (USA, Europe) (SGB Enhanced).gb",
           "InnerFileIndex": 0
