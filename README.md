@@ -1,1 +1,4 @@
-docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -v $PWD/.config:/home/user/.config ipp
+```sh
+docker build -t ipp .
+docker run -p 6901:6901 -e VNC_VIEW_ONLY=true -v $PWD/.config:/headless/.config ipp
+```
