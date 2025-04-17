@@ -16,4 +16,5 @@ RUN wget https://dlf.emu-land.net/nes/Mesen%20v2.0.0%2C%208%20Jul%202024%20%28Li
 RUN unzip -d . Mesen.zip
 RUN chmod +x ./Mesen
 
+COPY ./startup.sh ./
 COPY --from=BUILDER --chown=1000:1000 /target/release/ic-plays-pokemon /headless/server
