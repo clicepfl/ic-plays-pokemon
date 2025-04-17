@@ -4,3 +4,8 @@
 .config/Thunar
 .config/xfce4
 .config/pulse
+
+
+# Added by cargo
+
+/target
