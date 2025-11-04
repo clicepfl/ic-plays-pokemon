@@ -15,6 +15,8 @@
         --button-color: #343639;
         --button-border-color: #222;
 
+        touch-action: manipulation;
+
         font-family: "Press Start 2P", cursive;
       }
 
@@ -190,13 +192,15 @@
 
     <script>
       const buttons = document.querySelectorAll("button");
-      const cooldownTime = 3;
+      const cooldownTime = 1;
       let buttonsDisabled = false;
+      const buttonUnlockFrequency = 3;
       const dots = [
         document.getElementById("dot1"),
         document.getElementById("dot2"),
         document.getElementById("dot3"),
       ];
+      let lastDotPosition = -1;
       let lastPosition = -1;
 
       function disableButtons() {
@@ -233,19 +237,22 @@
       function updateRoundProgress() {
         const now = new Date();
         const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
-        const position = Math.floor(seconds % cooldownTime);
+        const position = Math.floor((seconds % cooldownTime) * buttonUnlockFrequency);
+        const dotPosition = Math.floor(seconds % 3);
 
         if (position !== lastPosition) {
-          if (position >= 0 && position < dots.length) {
-            dots[position].classList.add("pop");
-            setTimeout(() => {
-              dots[position].classList.remove("pop");
-            }, 1000);
-          }
           if (position === 0) {
             enableButtons();
           }
           lastPosition = position;
+        }
+
+        if (dotPosition !== lastDotPosition) {
+          dots[dotPosition].classList.add("pop");
+          setTimeout(() => {
+            dots[dotPosition].classList.remove("pop");
+          }, 1000);
+          lastDotPosition = dotPosition;
         }
       }
 

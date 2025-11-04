@@ -15,7 +15,7 @@ use tokio::time::{interval, sleep};
 use uuid::Uuid;
 
 const SESSION_COOKIE: &str = "icp-session";
-const INTERVAL_MILLIS: u64 = 3000;
+const INTERVAL_MILLIS: u64 = 1000;
 
 #[derive(FromFormField, PartialEq, Eq, Hash, Clone, Copy, Debug)]
 pub enum Input {
